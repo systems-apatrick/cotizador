@@ -1,0 +1,40 @@
+html {
+  box-sizing: border-box;
+}
+body {
+  background: #8a8f8e; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    hsl(88, 38%, 72%),
+    #bcece6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #72aaa5, #c3d396);
+  font-family: Arial, Helvetica, sans-serif;
+}
+ul {
+  list-style: none;
+  padding: none;
+  margin: none;
+}
+span.resultado {
+  position: relative;
+  width: 100%;
+}
+.resultado-enter {
+  transition: 0.5s;
+}
+.resultado-enter.resultado-enter-active {
+  transform: translateY(0%);
+}
+.resultado-exit {
+  transform: translateY(0);
+  transition: 0.5s;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.resultado-exit-active {
+  opacity: 0;
+  transform: translateY(-10%);
+}
