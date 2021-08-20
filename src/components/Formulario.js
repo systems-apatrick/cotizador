@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "@emotion/styled";
 
 const Campo = styled.div`
@@ -41,11 +41,25 @@ const Botton = styled.button`
   }
 `;
 const Formulario = () => {
+  const [datos, guardarDatos] = useState({
+    marca: "",
+    year: "",
+    plan: "",
+  });
+
+  // extraer los valores de state
+  const { marca, year, plan } = datos;
+
+  // leer los datos del formulario y colocar en el state
+  const obtenerInfo = (e) => {
+    guardarDatos({ ...datos, [e.target.name]: e.target.value });
+  };
+
   return (
     <form>
       <Campo>
         <Label>Marca</Label>
-        <Select>
+        <Select name="marca" value={marca} onChange={obtenerInfo}>
           <option value="">--- Seleecione ---</option>
           <option value="americano">Americano</option>
           <option value="europeo">Europeo</option>
@@ -56,7 +70,7 @@ const Formulario = () => {
 
       <Campo>
         <Label>Año</Label>
-        <Select>
+        <Select name="year" value={year} onChange={obtenerInfo}>
           <option value="">--- Seleecione ---</option>
           <option value="2021">2021</option>
           <option value="2020">2020</option>
@@ -75,9 +89,21 @@ const Formulario = () => {
 
       <Campo>
         <Label>Plan de Seguro</Label>
-        <InputRadio type="radio" name="plan" value="basico" />
+        <InputRadio
+          type="radio"
+          name="plan"
+          value="basico"
+          checked={plan === "basico"}
+          onChange={obtenerInfo}
+        />
         Básico
-        <InputRadio type="radio" name="plan" value="completo" />
+        <InputRadio
+          type="radio"
+          name="plan"
+          value="completo"
+          checked={plan === "completo"}
+          onChange={obtenerInfo}
+        />
         Completo
       </Campo>
       <Botton type="button">Cotizar</Botton>
