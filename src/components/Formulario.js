@@ -50,7 +50,7 @@ const Error = styled.div`
   text-align: center;
   margin-bottom: 2rem;
 `;
-const Formulario = () => {
+const Formulario = ({ guardarResumen }) => {
   const [datos, guardarDatos] = useState({
     marca: "",
     year: "",
@@ -95,6 +95,11 @@ const Formulario = () => {
     //   completo aumenta un 50%
     const incrementoPlan = obtenerPlan(plan);
     resultado = parseFloat(incrementoPlan * resultado).toFixed(2);
+
+    guardarResumen({
+      cotizacion: resultado,
+      datos,
+    });
   };
 
   return (
@@ -103,7 +108,7 @@ const Formulario = () => {
       <Campo>
         <Label>Marca</Label>
         <Select name="marca" value={marca} onChange={obtenerInfo}>
-          <option value="">--- Seleecione ---</option>
+          <option value="">--- Seleccione ---</option>
           <option value="americano">Americano</option>
           <option value="europeo">Europeo</option>
           <option value="asiatico">Asiatico</option>
@@ -114,7 +119,7 @@ const Formulario = () => {
       <Campo>
         <Label>Año</Label>
         <Select name="year" value={year} onChange={obtenerInfo}>
-          <option value="">--- Seleecione ---</option>
+          <option value="">--- Seleccione ---</option>
           <option value="2021">2021</option>
           <option value="2020">2020</option>
           <option value="2019">2019</option>

@@ -29,3 +29,9 @@ export function calcularMarca(marca) {
 export function obtenerPlan(plan) {
   return plan === "basico" ? 1.2 : 1.5;
 }
+
+// muestrar primera letra mayus
+
+export function primerMayus(texto) {
+  return texto.charAt(0).toUpperCase() + texto.slice(1);
+}
