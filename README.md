@@ -6,7 +6,7 @@ Esta aplicación esta desarrollada en REACT. Tiene interacción entre varios com
 
 ### Aplicacion disponible en:
 
-[Presuesto Personal](https://ccotizador.netlify.app/)
+[Cotizador](https://ccotizador.netlify.app/)
 
 ### Página realizada
 
