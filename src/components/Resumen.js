@@ -1,5 +1,6 @@
-import React, { Fragment } from "react";
+import React from "react";
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 import { primerMayus } from "../Helper";
 
 const ContenedorResumen = styled.div`
@@ -27,4 +28,7 @@ const Resumen = ({ datos }) => {
   );
 };
 
+Resumen.protoTypes = {
+  datos: PropTypes.object.isRequired,
+};
 export default Resumen;

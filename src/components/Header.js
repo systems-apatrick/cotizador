@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 
 const ContenedorHeader = styled.header`
   background-color: #45b39d;
@@ -22,4 +23,7 @@ const Header = ({ titulo }) => {
   );
 };
 
+Header.protoTypes = {
+  titulo: PropTypes.string.isRequired,
+};
 export default Header;
